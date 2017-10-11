@@ -1,11 +1,13 @@
 <?php
-    	if(isset($_POST['submit']))
+    if(isset($_POST['submit']))
 	{
+	
 
-		$servername = "localhost";
-		$username = "jftremblay";
-		$password = "_Jf1470$$$";
-		$dbname = "JFTremblay_personal";
+
+		$servername = "MySQL1";
+		$username = "root";
+		$password = "root";
+		$dbname = "HQDB";
 
 
 		$conn = mysqli_connect($servername, $username, $password, $dbname);
@@ -19,7 +21,21 @@
 		$email = $_POST['email'];
 		$mont = $_POST['mont'];
 
-		$sql = "INSERT INTO Participants (fname, lname, email, mont) VALUES ('$fname', '$lname', '$email', '$mont')";
+
+		$sql = "INSERT INTO `hqdb`.`participant`(`Participant_id`,`First_Name`,`Last_Name`,`Street_Name`,`Street_Number`,`Telehpone`,
+						`Email`,
+						`Montagne_id`,
+						`Participation_cout`)
+						VALUES
+						(<{Participant_id: }>,
+						<{First_Name: }>,
+						<{Last_Name: }>,
+						<{Street_Name: }>,
+						<{Street_Number: 0}>,
+						<{Telehpone: }>,
+						<{Email: }>,
+						<{Montagne_id: 0}>,
+						<{Participation_cout: 1}>);";
 
 		if (mysqli_query($conn, $sql)) {
     		echo "New record created successfully";
