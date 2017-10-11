@@ -31,7 +31,7 @@ function debug_to_console( $data ) {
 		$lname = $_POST['lname'];
 		$email = $_POST['email'];
 		$mont = $_POST['mont'];
-		$lname = $_POST['lname'];
+		$lname = $_POST['fname'];
 		
 		debug_to_console(".$fname.");
 
