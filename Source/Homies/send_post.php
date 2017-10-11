@@ -21,20 +21,18 @@
 		$email = $_POST['email'];
 		$mont = $_POST['mont'];
 
-
-		$sql = "INSERT INTO `hqdb`.`participant`(`Participant_id`,`First_Name`,`Last_Name`,`Street_Name`,`Street_Number`,`Telehpone`,
+		$sql = "INSERT INTO `hqdb`.`participant`(`First_Name`,`Last_Name`,`Street_Name`,`Street_Number`,`Telehpone`,
 						`Email`,
 						`Montagne_id`,
 						`Participation_cout`)
 						VALUES
-						(<{Participant_id: }>,
-						<{First_Name: }>,
-						<{Last_Name: }>,
+						(<{.$fname.}>,
+						<{.$lname. }>,
 						<{Street_Name: }>,
 						<{Street_Number: 0}>,
 						<{Telehpone: }>,
-						<{Email: }>,
-						<{Montagne_id: 0}>,
+						<{.$email.}>,
+						<{.}>,
 						<{Participation_cout: 1}>);";
 
 		if (mysqli_query($conn, $sql)) {
