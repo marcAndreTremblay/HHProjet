@@ -91,28 +91,28 @@
             <div class="service-box">
               <i class="fa fa-4x fa-pencil text-primary sr-icons"></i>
               <h3>Prénom</h3>
-              <input type="text" class="form-control" id="fname" name"fname">
+              <input type="text" class="form-control" name"fname">
             </div>
           </div>
           <div class="col-lg-3 col-md-6 text-center">
             <div class="service-box">
               <i class="fa fa-4x fa-pencil text-primary sr-icons"></i>
               <h3>Nom</h3>
-              <input type="text" class="form-control" id="lname" name"lname">
+              <input type="text" class="form-control"  name"lname">
             </div>
           </div>
           <div class="col-lg-3 col-md-6 text-center">
             <div class="service-box">
               <i class="fa fa-4x fa-envelope text-primary sr-icons"></i>
               <h3>Courriel</h3>
-              <input type="email" class="form-control" id="email" name"email">
+              <input type="email" class="form-control"  name"email">
             </div>
           </div>
           <div class="col-lg-3 col-md-6 text-center">
             <div class="service-box">
               <i class="fa fa-4x fa-globe text-primary sr-icons"></i>
               <h3>Montagne</h3>
-                <select class="form-control" id="mont" name"mont">
+                <select class="form-control"  name"mont">
 
     				<option>Valinouet</option>
 
