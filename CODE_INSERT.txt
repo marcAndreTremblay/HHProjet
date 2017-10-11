@@ -1,0 +1,70 @@
+---------MYSQL CONNECT---------
+
+<?php
+if(isset($_POST['submit']))
+{
+
+$con = mysql_connect("192.168.3.38:3306","jftremblay","_Jf1470$$$","JFTremblay_personal");
+if (!$con)
+  {
+  die('Could not connect: ' . mysql_error());
+  }
+
+mysql_select_db("JFTremblay_personal", $con);
+
+$fname = $_POST['fname'];
+$lname = $_POST['lname'];
+$email = $_POST['email'];
+$mont = $_POST['mont'];
+
+$sql="INSERT INTO Participants (fname, lname, email, mont) VALUES ('$fname','$lname','$email','$mont')";
+
+
+
+if (!mysql_query($sql,$con))
+  {
+  die('Error: ' . mysql_error());
+  }
+echo "1 record added";
+
+mysql_close($con);
+
+}
+?>
+
+echo("<script>console.log('PHP: ".$fname."');</script>");
+
+
+---------MYSQLI CONNECT---------
+
+
+if(isset($_POST['submit']))
+{
+
+$servername = "192.168.3.38:3306";
+$username = "jftremblay";
+$password = "_Jf1470$$$";
+$dbname = "JFTremblay_personal";
+
+
+$conn = mysqli_connect($servername, $username, $password, $dbname);
+
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+
+$fname = $_POST['fname'];
+$lname = $_POST['lname'];
+$email = $_POST['email'];
+$mont = $_POST['mont'];
+
+$sql = "INSERT INTO Participants (fname, lname, email, mont) VALUES ('$fname', '$lname', '$email', '$mont')";
+
+if (mysqli_query($conn, $sql)) {
+    echo "New record created successfully";
+} else {
+    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+}
+
+mysqli_close($conn);
+}
